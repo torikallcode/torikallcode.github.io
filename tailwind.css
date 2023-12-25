@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.hamburger-lineS {
+    @apply w-[22px] h-[3px] my-1 block bg-putih-0 rounded-full;
+}
+.hamburger-lineD {
+    @apply w-[30px] h-[3px] my-1 block bg-putih-0 rounded-full;
+}
+.hamburger-lineT {
+    @apply w-[15px] h-[3px] my-1 block bg-putih-0 rounded-full;
+}
+
+
+.hamburger-active > span:nth-child(1) {
+    @apply  rotate-45 w-[22px];
+}
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+    @apply  -rotate-45 w-[22px];
+}
+
+/* .navbar-fixed {
+    @apply fixed z-[9999] bg-white bg-opacity-70;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.2)
+} */
+
+.hide {
+    display: hidden;
+}

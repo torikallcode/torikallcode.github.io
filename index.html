@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Kameron:wght@400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Ibarra+Real+Nova&family=Kameron:wght@400;500;600;700&family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>First portfolio</title>
+    <style>
+      body {
+    --nav-height: 75px
+
+    padding-top: var(--nav-height)
+      } 
+
+      .nav {
+        width: 100%;
+        height: var(--nav-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: transform 0.2s;
+      }
+      .nav--hidden {
+        transform: translateY(-75px);
+
+      }
+
+      /* Marquee */
+      .marquee {
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+
+      h4 {
+      animation: move-rtl 9000ms linear infinite;
+    }
+
+      @keyframes move-rtl {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+
+
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-putih-0 h-[1000px]">
+  <div class="container h-screen bg-[url('/img/bckh2.jpg')] bg-cover bg-center pt-3 md:pt-7 lg:pt-0 min-w-full md:pb-10 pb-10 flex-col content-between">
+    <!-- Nav -->
+    <nav id="nav" class="nav fixed mt-3 left-0 right-0 transition-transform z-30 w-full max-w-[22rem] backdrop-blur-sm sm:max-w-lg bg-slate-600 bg-opacity-50  mx-auto p-3 lg:py-2 rounded-lg flex justify-between lg:justify-center items-center">
+      <a href="#">
+        <img src="img/Logo.png" alt="" class="w-9 lg:hidden cursor-pointer">
+      </a>
+      <button id="hamburger" class="block lg:hidden z-[60]">
+        <span class="hamburger-lineS transition-all ease-in-out origin-top-left"></span>
+        <span class="hamburger-lineD transition-all ease-in-out"></span>
+        <span class="hamburger-lineT transition-all ease-in-out origin-bottom-left"></span>
+      </button>
+      <ul class="hidden lg:flex justify-center items-center gap-7 lg:gap-12">
+        <a href="#" class="text-putih-0 font-primary font-medium text-base py-2 px-4 transition-all ease-in-out duration-150 hover:bg-putih-0 hover:text-hitam-0 rounded-lg cursor-pointer">Home</a>
+        <a href="#hero" class="text-putih-0 font-primary font-medium text-base py-2 px-4 transition-all ease-in-out duration-150 hover:bg-putih-0 hover:text-hitam-0 rounded-lg cursor-pointer">About</a>
+        <a href="#project" class="text-putih-0 font-primary font-medium text-base py-2 px-4 transition-all ease-in-out duration-150 hover:bg-putih-0 hover:text-hitam-0 rounded-lg cursor-pointer">project</a>
+        <a href="#contact" class="text-putih-0 font-primary font-medium text-base py-2 px-4 transition-all ease-in-out duration-150 hover:bg-putih-0 hover:text-hitam-0 rounded-lg cursor-pointer">contact</a>
+      </ul>
+    </nav>
+    <!-- isi Nav(mobile) -->
+    <section id="isiNav" class="fixed top-0 lef w-full h-screen hidden transition-opacity duration-300 opacity-0 ease-in-out bg-hitam-0 z-20 flex justify-center items-center flex-col gap-28">
+      <ul class="flex flex-col justify-center items-center gap-7">
+        <a href="#" onclick="hideIsiNav()" class="btnNav text-putih-0 font-primary font-bold text-2xl uppercase cursor-pointer">Home</a>
+        <a href="#hero" onclick="hideIsiNav()" class="btnNav text-putih-0 font-primary font-bold text-2xl uppercase cursor-pointer">About</a>
+        <a href="#project" onclick="hideIsiNav()" class="btnNav text-putih-0 font-primary font-bold text-2xl uppercase cursor-pointer">project</a>
+        <a href="#contact" onclick="hideIsiNav()" class="btnNav text-putih-0 font-primary font-bold text-2xl uppercase cursor-pointer">contact</a>
+      </ul>
+      <a href="https://github.com/torikallcode" class="flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" style="fill: rgba(244, 244, 244);"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg>
+      </a>
+    </section>
+    <section class="w-full relative h-screen flex flex-col justify-center items-center">
+      <div class="absolute top-3 w-full px-11 hidden lg:block">
+        <div class="flex justify-between items-center w-full">
+          <a href="#">
+            <img src="img/Logo.png" alt="" class="w-11 cursor-pointer">
+          </a>
+          <a href="https://github.com/torikallcode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44px" height="44px" viewBox="0 0 24 24" style="fill: rgba(244, 244, 244);"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mb-40 mt-36 flex flex-col justify-center items-center mx-auto">
+        <h2 class="font-primary text-base text-center uppercase text-putih-0 font-light sm:text-lg md:text-xl lg:text-2xl mb-3 lg:mb-7">Hi👋, iam Torikal</h2>
+        <h1 class="font-archivo text-4xl uppercase font-extrabold text-center leading-8 sm:leading-10 md:leading-[50px] lg:leading-[60px] xl:leading-[75px] tracking-tight text-putih-0 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Web designer<span class="font-light">/</span> <br> <span>Web developer</span></h1>
+        <h2 class="text-putih-0 text-center font-primary text-sm mt-5 md:text-base lg:text-sm">Coding itu menyenangkan bukan? :)</h2>
+      </div>
+      <a href="#hero">
+        <button class="w-full bg-transparent border border-putih-0 py-2 px-4 rounded-full font-primary text-base hover:bg-putih-0 hover:text-hitam-0 font-medium text-putih-0">Let's Talk <span class="text-xl">↓</span></button>
+      </a>
+    </section>
+    <!-- Marquee -->
+    <div class="flex justify-start gap-2 overflow-hidden -mt-[13px] md:-mt-7 lg:-mt-0 py-3 bg-hitam-0" id="aboutme">
+      <h4 class="uppercase text-2xl tracking-wide whitespace-nowrap text-putih-0 font-archivo font-extralight"> — Web developer — Web designer — Web developer — Web designer — Web developer — Web designer </h4>
+      <h4 class="uppercase text-2xl tracking-wide whitespace-nowrap text-putih-0 font-archivo font-extralight"> — Web developer — Web designer — Web developer — Web designer — Web developer — Web designer </h4>
+    </div>
+    <!-- Hero section -->
+    <section id="hero" class="relative w-full flex justify-center items-center flex-col px-5 pt-20 pb-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-3 gap-10 sm:gap-16 w-full lg:max-w-3xl xl:max-w-6xl">
+        <div data-aos="fade-right" data-aos-duration="1000" class="w-full h-full relative p-3 flex items-center justify-center flex-col">
+          <span class="bg-hitam-0 w-64 h-72 sm:w-[336px] sm:h-[368px] xl:w-[386px] xl:h-[418px] rounded-2xl flex justify-center items-center relative">
+            <img src="img/1654315110022.jpg" alt="" class="w-52 sm:w-[288px] xl:w-[328px] rounded-2xl absolute -bottom-3 sm:-bottom-9">
+          </span>
+        </div>
+        <div data-aos="fade-left" data-aos-duration="1000" class="w-full h-full flex justify-center items-center flex-col p-3 gap-3 max-w-[19rem] sm:max-w-[23rem] lg:max-w-xl mx-auto">
+          <h1 class="font-archivo text-5xl sm:text-6xl xl:text-8xl text-hitam-0 font-bold">Normal Human with High Desires</h1>
+          <p class="font-archivo text-base font-medium text-hitam-0 text-start max-w-[265px] sm:max-w-xs xl:max-w-lg">Hello everyone, my name is M.Torikal Akbar , I work with people from all over the world to create websites and design websites</p>
+        </div>
+      </div>
+    </section>
+    <!-- Project -->
+    <section id="project" class="relative w-full flex justify-center items-center flex-col px-5 pt-20 pb-10 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
+      <div class="flex justify-start items-center w-full text-start">
+        <h1 class="font-archivo text-2xl font-extrabold text-center text-hitam-0 mb-11 uppercase sm:text-3xl md:text-4xl lg:text-3xl">— Projects</h1>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-9 w-full  p-3">
+        <div data-aos="fade-right" data-aos-duration="1000" class="w-full px-3 py-4 hover:-translate-y-3 transition-all ease-in-out hover:bg-white rounded-2xl hover:shadow-lg">
+          <div class="w-full aspect-[5/3] mb-3 overflow-hidden border-2 border-hitam-0 rounded-xl">
+            <div class="bg-[url('/img/projext1.jpg')] bg-cover bg-center w-full h-full"></div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h1 class="font-archivo text-xl font-bold text-hitam-0 sm:text-3xl md:text-3xl lg:text-xl ">Torikal.ui</h1>
+            <p class="font-archivo text-sm text-hitam-0 font-light mb-3">Website yang menyediakan component Tailwindcss gratis yang siap untuk digunakan</p>
+            <a id="projectSatu" class="cursor-pointer py-1 px-2 bg-hitam-0 rounded-lg flex justify-center items-center w-24">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(244, 244, 244)"><path d="M7 6v12l10-6z"></path></svg>
+              <h2 class="font-archivo text-xs text-putih-0">Demo</h2>
+            </a>
+          </div>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="w-full px-3 py-4 hover:-translate-y-3 transition-all ease-in-out  hover:bg-white rounded-2xl hover:shadow-lg">
+          <div class="w-full aspect-[5/3] mb-3 overflow-hidden border-2 border-hitam-0 rounded-xl">
+            <div class="bg-[url('/img/projext21.jpg')] bg-cover bg-center w-full h-full"></div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h1 class="font-archivo text-xl font-bold text-hitam-0 sm:text-3xl md:text-3xl lg:text-xl ">Wedding invitation</h1>
+            <p class="font-archivo text-sm text-hitam-0 font-light mb-3">Website undangan pernikahan yang memudahkan tamu mendapatkan informasi terkait pernikahan</p>
+            <a href="https://torikallcode.github.io/MyWedding_Amerta/ " class="cursor-pointer py-1 px-2 bg-hitam-0 rounded-lg flex justify-center items-center w-24">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(244, 244, 244)"><path d="M7 6v12l10-6z"></path></svg>
+              <h2 class="font-archivo text-xs text-putih-0">Demo</h2>
+            </a>
+          </div>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="w-full px-3 py-4 hover:-translate-y-3 transition-all ease-in-out  hover:bg-white rounded-2xl hover:shadow-lg">
+          <div class="w-full aspect-[5/3] mb-3 overflow-hidden border-2 border-hitam-0 rounded-xl">
+            <div class="bg-[url('/img/projext31.jpg')] bg-cover bg-center w-full h-full"></div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h1 class="font-archivo text-xl font-bold text-hitam-0 sm:text-3xl md:text-3xl lg:text-xl ">GameSuit Pro</h1>
+            <p class="font-archivo text-sm text-hitam-0 font-light mb-3">website game suit yang lebih menantang dari game suit biasanya</p>
+            <a href="https://torikallcode.github.io/MyGameSuit_v.2/" class="cursor-pointer py-1 px-2 bg-hitam-0 rounded-lg flex justify-center items-center w-24">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(244, 244, 244)"><path d="M7 6v12l10-6z"></path></svg>
+              <h2 class="font-archivo text-xs text-putih-0">Demo</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <section id="section-skills" class="w-full flex justify-center items-center flex-col relative px-5 pt-20 pb-10 mx-auto  max-w-[24rem] sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+      <div class="flex justify-start items-center w-full text-start">
+        <h1 class="font-archivo text-2xl font-extrabold text-center text-hitam-0 mb-11 uppercase sm:text-3xl md:text-4xl lg:text-3xl">— Skills</h1>
+      </div>
+      <div class="grid grid-cols-1 w-full">
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-t border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">html</h1>
+          <svg id="sk1" class="z-20 transition-all ease-in-out" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(37 ,37 ,37);"><path d="M4.136 3.012h15.729l-1.431 16.15-6.451 1.826-6.414-1.826-1.433-16.15zm5.266 7.302-.173-2.035 7.533.002.173-1.963-9.87-.002.522 5.998h6.835l-.243 2.566-2.179.602-2.214-.605-.141-1.58H7.691l.247 3.123L12 17.506l4.028-1.08.558-6.111H9.402v-.001z"></path></svg>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-t border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">css</h1>
+          <svg id="sk2" class="z-20 transition-all ease-in-out" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(37 ,37 ,37);"><path d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z"></path></svg>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-t border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">javascript</h1>
+          <svg class="z-20 transition-all ease-in-out " xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(37 ,37 ,37);"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-t border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">Tailwindcss</h1>
+          <svg class="z-20 transition-all ease-in-out " xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(37 ,37 ,37);"><path d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z"></path></svg>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-t border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">Alpine js</h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 128 128"><path fill="rgba(37 ,37 ,37);" fill-rule="evenodd" d="M98.444 35.562 126 62.997 98.444 90.432 70.889 62.997z" clip-rule="evenodd"/><path fill="#2d3441" fill-rule="evenodd" d="m29.556 35.562 57.126 56.876H31.571L2 62.997z" clip-rule="evenodd"/></svg>
+        </div>
+        <div  data-aos="fade-right" data-aos-duration="1000" class="skills relative cursor-pointer flex justify-between items-center border-y border-slate-400 w-full py-4 px-3 transition-all ease-in-out duration-150">
+          <h1 class="font-semibold font-archivo text-xl text-hitam-0 uppercase">react js</h1>
+          <svg class="z-20 transition-all ease-in-out " xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" style="fill: rgba(37 ,37 ,37);"><circle cx="12" cy="11.245" r="1.785"></circle><path d="m7.002 14.794-.395-.101c-2.934-.741-4.617-2.001-4.617-3.452 0-1.452 1.684-2.711 4.617-3.452l.395-.1.111.391a19.507 19.507 0 0 0 1.136 2.983l.085.178-.085.178c-.46.963-.841 1.961-1.136 2.985l-.111.39zm-.577-6.095c-2.229.628-3.598 1.586-3.598 2.542 0 .954 1.368 1.913 3.598 2.54.273-.868.603-1.717.985-2.54a20.356 20.356 0 0 1-.985-2.542zm10.572 6.095-.11-.392a19.628 19.628 0 0 0-1.137-2.984l-.085-.177.085-.179c.46-.961.839-1.96 1.137-2.984l.11-.39.395.1c2.935.741 4.617 2 4.617 3.453 0 1.452-1.683 2.711-4.617 3.452l-.395.101zm-.41-3.553c.4.866.733 1.718.987 2.54 2.23-.627 3.599-1.586 3.599-2.54 0-.956-1.368-1.913-3.599-2.542a20.683 20.683 0 0 1-.987 2.542z"></path><path d="m6.419 8.695-.11-.39c-.826-2.908-.576-4.991.687-5.717 1.235-.715 3.222.13 5.303 2.265l.284.292-.284.291a19.718 19.718 0 0 0-2.02 2.474l-.113.162-.196.016a19.646 19.646 0 0 0-3.157.509l-.394.098zm1.582-5.529c-.224 0-.422.049-.589.145-.828.477-.974 2.138-.404 4.38.891-.197 1.79-.338 2.696-.417a21.058 21.058 0 0 1 1.713-2.123c-1.303-1.267-2.533-1.985-3.416-1.985zm7.997 16.984c-1.188 0-2.714-.896-4.298-2.522l-.283-.291.283-.29a19.827 19.827 0 0 0 2.021-2.477l.112-.16.194-.019a19.473 19.473 0 0 0 3.158-.507l.395-.1.111.391c.822 2.906.573 4.992-.688 5.718a1.978 1.978 0 0 1-1.005.257zm-3.415-2.82c1.302 1.267 2.533 1.986 3.415 1.986.225 0 .423-.05.589-.145.829-.478.976-2.142.404-4.384-.89.198-1.79.34-2.698.419a20.526 20.526 0 0 1-1.71 2.124z"></path><path d="m17.58 8.695-.395-.099a19.477 19.477 0 0 0-3.158-.509l-.194-.017-.112-.162A19.551 19.551 0 0 0 11.7 5.434l-.283-.291.283-.29c2.08-2.134 4.066-2.979 5.303-2.265 1.262.727 1.513 2.81.688 5.717l-.111.39zm-3.287-1.421c.954.085 1.858.228 2.698.417.571-2.242.425-3.903-.404-4.381-.824-.477-2.375.253-4.004 1.841.616.67 1.188 1.378 1.71 2.123zM8.001 20.15a1.983 1.983 0 0 1-1.005-.257c-1.263-.726-1.513-2.811-.688-5.718l.108-.391.395.1c.964.243 2.026.414 3.158.507l.194.019.113.16c.604.878 1.28 1.707 2.02 2.477l.284.29-.284.291c-1.583 1.627-3.109 2.522-4.295 2.522zm-.993-5.362c-.57 2.242-.424 3.906.404 4.384.825.47 2.371-.255 4.005-1.842a21.17 21.17 0 0 1-1.713-2.123 20.692 20.692 0 0 1-2.696-.419z"></path><path d="M12 15.313c-.687 0-1.392-.029-2.1-.088l-.196-.017-.113-.162a25.697 25.697 0 0 1-1.126-1.769 26.028 26.028 0 0 1-.971-1.859l-.084-.177.084-.179c.299-.632.622-1.252.971-1.858.347-.596.726-1.192 1.126-1.77l.113-.16.196-.018a25.148 25.148 0 0 1 4.198 0l.194.019.113.16a25.136 25.136 0 0 1 2.1 3.628l.083.179-.083.177a24.742 24.742 0 0 1-2.1 3.628l-.113.162-.194.017c-.706.057-1.412.087-2.098.087zm-1.834-.904c1.235.093 2.433.093 3.667 0a24.469 24.469 0 0 0 1.832-3.168 23.916 23.916 0 0 0-1.832-3.168 23.877 23.877 0 0 0-3.667 0 23.743 23.743 0 0 0-1.832 3.168 24.82 24.82 0 0 0 1.832 3.168z"></path></svg>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="w-full flex mx-auto flex-col relative px-5 pt-20 pb-32 max-w-[24rem] sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+      <div data-aos="fade-right" data-aos-duration="1000" class="flex justify-start items-center w-full text-start sm:mb-7 lg:mb-20">
+        <h1 class="font-archivo text-2xl font-extrabold text-center text-hitam-0 mb-11 uppercase sm:text-3xl md:text-4xl lg:text-3xl">— Contact</h1>
+      </div>
+      <div class="flex flex-col justify-center items-center w-full mx-auto lg:max-w-3xl xl:max-w-4xl mb-5">
+        <h2 data-aos="fade-right" data-aos-duration="1000" class="font-archivo text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extralight lg:font-thin text-left mx-auto">LET’S TALK ABOUT DESIGN, PROJECTS AND WORK</h2>
+        <p data-aos="fade-right" data-aos-duration="1000" class="font-archivo text-hitam-0 text-sm sm:text-base md:text-lg font-normal">Are you looking for a freelance web designer or graphic designer? Do you have a project or idea to realize? Feel free to send me an email to discuss it, I've got you covered!</p>
+      </div>
+      <div data-aos="fade-right" data-aos-duration="1000" class="w-full lg:px-11 xl:px-44 mb-14 lg:mb-24">
+        <a href="https://torikalcontent@gmail.com">
+          <button class="py-2 px-3 lg:py-3 lg:px-4 bg-transparent text-hitam-0 border border-hitam-0 rounded-full lg:font-medium font-archivo w-44 lg:w-48 hover:bg-hitam-0 hover:text-putih-0 transition-all ease-in-out ">Send your email</button>
+        </a>
+      </div>
+      <div data-aos="fade-right" data-aos-duration="1000" class="flex justify-around items-center border-y border-slate-400 py-9 lg:py-11 lg:mx-11">
+        <!-- Linkedin -->
+        <a href="https://www.linkedin.com/in/m-torikal-akbar-23859a29b">
+          <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:scale-125 transition-transform ease-out" width="24" height="24" viewBox="0 0 24 24" style="fill: #252525;"><circle cx="4.983" cy="5.009" r="2.188"></circle><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg>
+        </a>
+        <!-- github -->
+        <a href="https://github.com/torikallcode">
+          <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:scale-125 transition-transform ease-out" width="24" height="24" viewBox="0 0 24 24" style="fill: #252525;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg>
+        </a>
+        <!-- instagram -->
+        <a href="https://www.instagram.com/torikallcode/?hl=id">
+          <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:scale-125 transition-transform ease-out" width="24" height="24" viewBox="0 0 24 24" style="fill: #252525;"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg>
+        </a>
+        <!-- meta -->
+        <a href="https://www.facebook.com/profile.php/?id=100016778295782&name=xhp_nt__fb__action__open_user">
+          <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer hover:scale-125 transition-transform ease-out" width="24" height="24" viewBox="0 0 24 24" style="fill: #252525;"><path d="M20.26 7.8a4.82 4.82 0 0 0-3.93-2.44 3.91 3.91 0 0 0-2.54 1.09 10.58 10.58 0 0 0-1.52 1.71 11 11 0 0 0-1.63-1.72 4.39 4.39 0 0 0-2.88-1.08A5 5 0 0 0 3.7 8 11.49 11.49 0 0 0 2 14a7 7 0 0 0 .18 1.64A4.44 4.44 0 0 0 2.71 17a3.23 3.23 0 0 0 3 1.6c1.25 0 2.19-.56 3.3-2a26.4 26.4 0 0 0 2.21-3.6l.63-1.12c.06-.09.11-.18.16-.27l.15.25 1.79 3A14.77 14.77 0 0 0 16 17.63a3.38 3.38 0 0 0 2.55 1 3 3 0 0 0 2.54-1.23 2.2 2.2 0 0 0 .18-.28 4.1 4.1 0 0 0 .31-.63l.12-.35A6.53 6.53 0 0 0 22 15a9 9 0 0 0 0-1 11.15 11.15 0 0 0-1.74-6.2zm-10.12 3.56c-.64 1-1.57 2.51-2.37 3.61-1 1.37-1.51 1.51-2.07 1.51a1.29 1.29 0 0 1-1.15-.66 3.3 3.3 0 0 1-.39-1.7A9.74 9.74 0 0 1 5.54 9a2.8 2.8 0 0 1 2.19-1.47A3 3 0 0 1 10 8.74a14.07 14.07 0 0 1 1 1.31zm8.42 5.12c-.48 0-.85-.19-1.38-.83A34.87 34.87 0 0 1 14.82 12l-.52-.86c-.36-.61-.71-1.16-1-1.65a2.46 2.46 0 0 1 .17-.27c.94-1.39 1.77-2.17 2.8-2.17a3.12 3.12 0 0 1 2.49 1.66 10.17 10.17 0 0 1 1.37 5.34c-.04 1.31-.34 2.43-1.57 2.43z"></path></svg>
+        </a>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="w-full flex justify-center items-center bg-hitam-0 px-5 pt-20 pb-7 flex-col">
+      <div class="flex justify-center items-center flex-col max-w-[19rem] sm:max-w-[22rem] md:max-w-md">
+        <h1 class="font-archivo text-putih-0 text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-7">Thanks for visitting my portfolio</h1>
+        <p class="font-archivo text-putih-0 text-base font-light text-center mb-7 md:text-lg">Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+      </div>
+      <div class="flex justify-center flex-col w-full bg-putih-0 rounded-2xl p-5 gap-5 md:gap-11 lg:gap-16 xl:gap-32">
+        <div class="flex flex-col md:flex-row justify-between gap-3 mb-5">
+          <div>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-start xl:text-base">Web designer & web developer</h1>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-start xl:text-base">Portfolio 13-12-2023</h1>
+          </div>
+          <div>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-end xl:text-base">Available for freelance work</h1>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-end xl:text-base">December-2023</h1>
+          </div>
+        </div>
+        <div class="flex justify-center items-center max-w-[17rem] sm:max-w-xs md:max-w-md xl:max-w-2xl mx-auto mb-5">
+          <h1 class="font-anton text-4xl text-hitam-0 font-bold text-center sm:text-5xl md:text-6xl xl:text-7xl uppercase">Improve Your Skills to Exceed Your Limit</h1>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between gap-3 md:mb-0">
+          <div>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-start xl:text-base">Click for contactme ↘</h1>
+            <a href="https://torikalcontent@gmail.com">
+              <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-start xl:text-base">torikalcontent@gmail.com</h1>
+            </a>
+          </div>
+          <div class="hidden md:block mx-auto">
+            <div class="grid grid-cols-3 gap-2 lg:gap-9 sm:max-w-xs md:max-w-sm mx-auto">
+              <a href="https://www.linkedin.com/in/m-torikal-akbar-23859a29b">
+                <button class="px-2 w-full py-1 lg:px-3 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Linkedin</button>
+              </a>
+              <a href="https://github.com/torikallcode">
+                <button class="px-2 w-full py-1 lg:px-3 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Github</button>
+              </a>
+              <a href="https://www.instagram.com/torikallcode/?hl=id">
+                <button class="px-2 w-full py-1 lg:px-3 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Instagram</button>
+              </a>
+            </div>
+          </div>
+          <div>
+            <a href="#">
+              <h1 class="w-full text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-end xl:text-base">Back to top ↑</h1>
+            </a>
+            <h1 class="text-center font-archivo text-hitam-0 text-sm font-medium sm:text-base md:text-sm md:text-end xl:text-base">® 2021 All rights Rcerved</h1>
+          </div>
+        </div>
+        <!-- smedia -->
+        <div class="grid grid-cols-3 gap-2 sm:max-w-xs mx-auto md:hidden">
+          <a href="https://www.linkedin.com/in/m-torikal-akbar-23859a29b">
+            <button class="px-2 w-full py-1 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Linkedin</button>
+          </a>
+          <a href="https://github.com/torikallcode">
+            <button class="px-2 w-full py-1 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Github</button>
+          </a>
+          <a href="https://www.instagram.com/torikallcode/?hl=id">
+            <button class="px-2 w-full py-1 rounded-full bg-transparent border border-hitam-0 hover:text-putih-0 hover:bg-hitam-0 transition-all ease-in-out">Instagram</button>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
